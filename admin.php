@@ -8,8 +8,14 @@ if(!isset($_SESSION['username'])){
 }
 
 
+$enqueries = $database->query(
+	"SELECT * FROM enquery ORDER BY name",array()
+)->fetchAll();
 
-view('admin',array());
+// print_r($enqueries);
+
+
+view('admin',array('enqueries' => $enqueries));
 
 
 ?>

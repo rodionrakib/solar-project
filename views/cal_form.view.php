@@ -1,12 +1,12 @@
-<form name="app_post" method="post" action="">
+<form name="app_post" method="post" action="" id="form_contact" onsubmit="myFunction()">
     <div id="app_post">
     	<div class="form-group">                
 	    	<label class="control-label required" for="daily_usage">	Average Daily kW Use </label>
-	    	<input type="number" id="daily_usage" name="daily_usage" required="required" class="form-control" />
+	    	<input type="number" id="daily_usage" name="daily_usage"  class="form-control" />
     	</div>
     	<div class="form-group">                
     		<label class="control-label required" for="address">Address</label>
-    		<input type="text" id="address" name="address" required="required" class="form-control"></textarea>
+    		<input type="text" id="address" name="address"  class="form-control"></textarea>
 		</div>
 		<div class="form-group"> 
 			<label class="control-label required" >Building Type</label>               
@@ -22,26 +22,28 @@
 		</div>
 		<div class="form-group">                
 			<label class="control-label required" for="persentage_solar">5.	Percentage (%) of their house they want to power with Solar / Renewables</label>
-			<input type="number" id="persentage_solar" name="persentage_solar" required="required" class="form-control" value="anna_admin@symfony.com" />
+			<input type="number" id="persentage_solar" name="persentage_solar"  class="form-control" value="anna_admin@symfony.com" />
 		</div>
 		<div class="form-group">                
     		<label class="control-label required" for="name">Name</label>
-    		<input type="text" id="name" name="name" required="required" class="form-control">
+    		<input type="text" id="name" name="name"  class="form-control">
 		</div>
 		<div class="form-group">                
     		<label class="control-label required" for="email">Email</label>
-    		<input type="email" id="email" name="email" required="required" class="form-control">
+    		<input type="email" id="email" name="email"  class="form-control">
 		</div>
 
 		<div class="form-group">                
     		<label class="control-label required" for="contact">Contact</label>
-    		<input type="text" id="contact" name="contact" required="required" class="form-control">
+    		<input type="text" id="contact" name="contact"  class="form-control">
 		</div>
 		<div id="locationField" class="form-group">
 			<label class="control-label required" for="location">Your Location </label>
-	      	<input id="autocomplete" placeholder="Enter your address" id="location" name="location" class="form-control"
+	      	<input id="autocomplete" placeholder="Enter  address" id="location" name="location" class="form-control"
 	             onFocus="geolocate()" type="text"></input>
     	</div>
+    	<input type="hidden" name="lat" id="lat">
+    	<input id="form_submit" type="submit">
 	</div>
 
     	
@@ -120,6 +122,25 @@
           });
         }
       }
+
+
+    </script>
+    <script type="text/javascript">
+   //  	$(document).ready(function() {
+    	
+    
+		 // $('#form_contact').submit(function(event){
+		 // 	event.preventDefualt();
+		 // 	alert("SUBMIT");
+		 // 	return false;
+		 // });
+
+		
+   //  	 });
+
+	function myFunction(){
+		lat = document.getElementById('lat').value = autocomplete.getPlace().geometry.location.lat();
+	}
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1JkCvBB-2ZLczJCaZwkQu1u6jHAGCxa0&libraries=places&callback=initAutocomplete"
         async defer></script>

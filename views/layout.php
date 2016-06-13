@@ -3,6 +3,7 @@
 <head>
 	<title>Solar Project</title>
 	 <link rel="stylesheet" href="css/app.css">
+     <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
 </head>
 
 <body > 
@@ -11,7 +12,7 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="">
-                    Symfony Demo
+                    Solar
                 </a>
 
                 <button type="button" class="navbar-toggle"
@@ -79,16 +80,16 @@
 <script>
 $(document).ready(function() {
     hljs.initHighlightingOnLoad();
-    $('#us3').locationpicker({
-    location: {latitude: 46.15242437752303, longitude: 2.7470703125},   
-    radius: 300,
-    inputBinding: {
-        latitudeInput: $('#us2-lat'),
-        longitudeInput: $('#us2-lon'),
-        radiusInput: $('#us2-radius'),
-        locationNameInput: $('#us2-address')
-    }
-    });
+    // $('#us3').locationpicker({
+    // location: {latitude: 46.15242437752303, longitude: 2.7470703125},   
+    // radius: 300,
+    // inputBinding: {
+    //     latitudeInput: $('#us2-lat'),
+    //     longitudeInput: $('#us2-lon'),
+    //     radiusInput: $('#us2-radius'),
+    //     locationNameInput: $('#us2-address')
+    // }
+    // });
 });
 </script>
 </body>

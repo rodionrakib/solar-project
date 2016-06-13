@@ -8,6 +8,6 @@
 
 
 define('DBUSERNAME', 'root');
-define('DBPASSWORD', 'delld630c');
-define("DBNAME", 'smfoappdb');
+define('DBPASSWORD', 'whatthefuck');
+define("DBNAME", 'solardb');
 

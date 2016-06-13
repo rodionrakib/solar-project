@@ -25,6 +25,7 @@ class Database {
 
 		return $this->connection;
 		} catch (Exception $e) {
+			// echo $e->getMessage();
 			return false;
 		}
 	}
@@ -33,7 +34,7 @@ class Database {
 	public function query($query,$bindParams)
 	{
 		$preparedQuery = $this->connection->prepare($query);
-		print_r($preparedQuery);
+		// print_r($preparedQuery);
 		// $preparedQuery->bindParam($bindParams,PDO::PARAM_INT);
 		$preparedQuery->execute($bindParams);
 
@@ -59,19 +60,41 @@ class Database {
 		return $result ? $result[0] : false;
 	}
 
+	public function findUser($username , $password )
+	{
+		// also need to make sure table exists !!!
+	
+		$result = $this->query("
+			SELECT * 
+			FROM users 
+			WHERE username = :username AND password = :password
+			LIMIT 1 ",
+			array('username' => $username,'password' => $password)
+
+			)->fetchAll();
+		return $result ? $result[0] : false;
+	}
+
+
 
 }
 
 
 
 $database = new Database();
-$player = $database->getById(99,'player');
-if ($player) {
-	print_r($player);
-}
-else {
-	echo "player Not Found";
-}
+$database->connect();
+
+// $user = $database->findUser('admin',md5('foobar'));
+
+// print_r($user);
+
+// $player = $database->getById(99,'player');
+// if ($player) {
+// 	print_r($player);
+// }
+// else {
+// 	echo "player Not Found";
+// }
 // lets test insert action 
 
 // $database->query("INSERT INTO player 
